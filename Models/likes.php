@@ -16,6 +16,7 @@ function createLike(array $data)
     if ($mysqli->connect_errno) {
     echo 'MySQLの接続に失敗しました。:' . $mysqli->connect_error . "\n";
     exit;
+    }
 
     // 新規登録のSQLを作成
     $query = 'INSERT INTO likes (user_id, tweet_id) VALUES (?, ?)';
@@ -65,7 +66,7 @@ function deleteLike(array $data)
     $statement = $mysqli->prepare($query);
 
     // プレースホルダにセット
-    $statement->bind_param('ii', $data['Like_id'], $data['user_id']);
+    $statement->bind_param('ii', $data['like_id'], $data['user_id']);
 
     // SQL実行
     $response = $statement->execute();

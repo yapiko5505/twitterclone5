@@ -31,7 +31,7 @@
                         .fail((data) => {
                             alert('処理中にエラーが発生しました。');
                             console.log(data);
-                        })            
+                        });           
             
          } else {
              // いいね!付与
@@ -55,7 +55,7 @@
             .fail((data) => {
                 alert('処理中にエラーが発生しました。');
                 console.log(data);
-            })
+            });
 
          }
      })

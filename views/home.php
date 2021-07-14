@@ -13,8 +13,7 @@
         <?php include_once('../views/common/side.php'); ?>
         <div class="main">
             <div class="main-header">
-                <h1>ホーム</h1>
-                
+                <h1>ホーム</h1>    
             </div>
             <div class="tweet-post">
                 <div class="my-icon">
@@ -30,12 +29,11 @@
                             <button class="btn" type="submit">つぶやく</button>
                         </div>
                     </form>
-
                 </div>
             </div>
             <div class="ditch"></div>
 
-            <?php if (empty($view_tweets)): ?>
+            <?php if (empty($view_tweets)) : ?>
                 <p class="p-3">ツイートがまだありません</p>
             <?php else: ?>
                 <div class="tweet-list">

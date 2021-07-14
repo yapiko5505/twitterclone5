@@ -29,9 +29,9 @@ if(isset($_POST['tweet_id'])) {
 }
 
 // いいね！IDが指定されている場合は、いいね！を削除
-if(isset($_POST['Like_id'])) {
+if(isset($_POST['like_id'])) {
     $data = [
-        'Like_id' => $_POST['Like_id'],
+        'like_id' => $_POST['like_id'],
         'user_id' => $user['id'],
     ];
     // いいね！削除
@@ -43,7 +43,7 @@ if(isset($_POST['Like_id'])) {
 $response = [
     'message' => 'successful',
     // いいね！したときに値が入る
-    'Like_id' => $Like_id,
+    'like_id' => $like_id,
 ];
 header('Content-Type: application/json; charset=utf-8');
 echo json_encode($response);

@@ -1,37 +1,3 @@
-<?php
-// 設定関連を読み込む
-include_once('../config.php');
-// 便利な関数を読み込む
-include_once('../util.php');
-
-// ツイート一覧作成
-$view_tweets = [
-    [
-        'user_id' => 1,
-        'user_name' =>'taro',
-        'user_nickname' =>'太郎',
-        'user_image_name' => '\sample-person.jpg',
-        'tweet_body' => '今プログラミングをしています。',
-        'tweet_image_name' => null,
-        'tweet_created_at' => '2021-03-15 14:00:00',
-        'like_id' => null,
-        'like_count' => 0,
-    ],
-
-    [
-        'user_id' => 2,
-        'user_name' =>'jiro',
-        'user_nickname' =>'次郎',
-        'user_image_name' => null,
-        'tweet_body' => 'コワーキングスペースをオープンしました!',
-        'tweet_image_name' => 'sample-post.jpg',
-        'tweet_created_at' => '2021-03-14 14:00:00',
-        'like_id' => 1,
-        'like_count' => 1,
-    ],
-];
-
-?>
 
 <!DOCTYPE html>
 <html lang="ja">
@@ -42,7 +8,7 @@ $view_tweets = [
     <meta name="discription" content="検索画面です">
 
 </head>
-<body class="home">
+<body class="home search text-center">
     <div class="container">
         <?php include_once('../views/common/side.php'); ?>
         <div class="main">
@@ -60,7 +26,7 @@ $view_tweets = [
 
             <div class="ditch"></div>
 
-            <?php if (empty($view_tweets)): ?>
+            <?php if (empty($view_tweets)) : ?>
                 <p class="p-3">該当のツイートは見つかりませんでした。</p>
             <?php else: ?>
                 <div class="tweet-list">

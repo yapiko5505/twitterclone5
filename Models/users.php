@@ -62,7 +62,7 @@ function findUserAndCheckPassword(string $email, string $password)
     $email = $mysqli->real_escape_string($email);
 
     // クエリを作成
-    // 
+    // 外部からのリクエストは何が入ってくるか分からないので、必ずエスケープしたものを使う。
     $query = 'SELECT * FROM users WHERE email = "'.$email.'"';
 
     // SQL実行
