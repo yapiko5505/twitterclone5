@@ -70,7 +70,7 @@ function findTweets(array $user, string $keyword = null)
             U.nickname AS user_nickname,
             U.image_name AS user_image_name,
             --ログインユーザーがいいね！したか（している場合、値が入る）
-            L.id AS Like_id,
+            L.id AS like_id,
             --いいね！数
             (SELECT COUNT (*) FROM likes WHERE status = 'active' AND tweet_id = T.id) AS like_count
 
